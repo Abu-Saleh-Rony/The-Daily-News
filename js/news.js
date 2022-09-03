@@ -34,7 +34,7 @@ const displaynews = portalnews => {
         portalElement.innerHTML = ` <p>${portalnews.length} Items found for this Category.</p> `
 
         const newsDiv = document.createElement('div');
-        newsDiv.setAttribute('class', 'row gy-5')
+        newsDiv.setAttribute('class', 'row')
         newsDiv.innerHTML = ` 
         <div class="col-md-4">
         <img src="${news.image_url}" class="img-fluid rounded-start" alt="...">
@@ -45,13 +45,22 @@ const displaynews = portalnews => {
             <p class="card-text">${news.details.slice(0, 200)}</p>
 
 
-            <div class ="d-flex justify-content-between">
+            <div class ="d-flex align-items-center justify-content-between">
 
-            <div class ="d-flex align-items-center justify-content-between ">
+            <div class ="d-flex align-items-center">
+
+            <div>
             <img src="${news.author.img}"
             alt="Generic placeholder image" class="img-fluid rounded-circle border border-dark border-3"
             style="width: 70px;">
+            </div>
+
+            <div>
             <p class="card-text"><small class="text-muted">${news.author.name}</small></p>
+            <p class="card-text"><small class="text-muted">${news.author.published_date}</small></p>
+            </div>
+
+           
             </div>
 
             <div>
