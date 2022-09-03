@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily News</title>
+    <!--Bootstrap Link--->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!--Custom CSS Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-color">
+    <!--Navbar Section-->
+    <section class="container">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light border-bottom navbar-underline-color">
+                <div class="container-fluid container">
+                    <a class="navbar-brand fs-2 fw-bold" href="#">The Daily <span
+                            class="bg-primary text-white p-2 border rounded">News</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">News</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active bg-primary text-white p-2 rounded" href="#">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What are the difference between var, let & const?
+
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>var, let and const keywords in JavaScript are
+                        </strong>
+                        var variables can be updated and re-declared within its scope; let variables can be updated but
+                        not re-declared; const variables can neither be updated nor re-declared. They are all hoisted to
+                        the top of their scope. But while var variables are initialized with undefined , let and const
+                        variables are not initialized.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        What are the difference between arrow function vs regular function?
+
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Regular functions</strong>created using function declarations or expressions are
+                        constructible and callable. Since regular functions are constructible, they can be called using
+                        the new keyword. However, the <strong>arrow functions</strong>are only callable and not
+                        constructible, i.e arrow
+                        functions can never be used as constructor functions.
+
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        What are difference between forEach, map, find & filter?
+
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong> The forEach() method</strong> does not create a new array based on the given array.
+                        <strong> The
+                            map() method</strong>
+                        creates an entirely new array. The forEach() method returns “undefined“. The map() method
+                        returns the newly created array according to the provided callback function
+                        <strong>The find() method</strong> is used to find all the descendant elements of the selected
+                        element. It finds
+                        the element in the DOM tree by traversing through the root to leaf. <strong>The filter()
+                            method</strong> is used
+                        to filters all the elements and returns the element that matches and the element that do not
+                        match are removed.
+
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Why we use template strings?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong> Template Strings</strong> allow you to use strings or embedded expressions in the
+                        form of a string. They are enclosed in backticks ``.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="js/news.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
