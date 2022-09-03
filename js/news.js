@@ -28,11 +28,16 @@ const loadnewsdetails = async (category_id) => {
 const displaynews = portalnews => {
     const newsContainer = document.getElementById('news-portal');
     newsContainer.innerHTML = '';
-    portalnews.forEach(news => {
+    const portalElement = document.getElementById('category-news-found');
+    if (portalnews.length === 0) {
+        portalElement.innerHTML = `<p>No news items found</p>`
+    } else {
+        portalElement.innerHTML = `<p>${portalnews.length} Items found for this Category.</p> `
+        console.log(portalnews.length)
 
-        const portalElement = document.getElementById('category-news-found');
-        portalElement.innerHTML = ` <p>
-        ${portalnews.length} Items found for this Category.</p> `
+    }
+
+    portalnews.forEach(news => {
 
         const newsDiv = document.createElement('div');
         newsDiv.setAttribute('class', 'row')
@@ -45,46 +50,70 @@ const displaynews = portalnews => {
             <h5 class="card-title">${news.title}</h5>
             <p class="card-text">${news.details.slice(0, 200)}...</p>
 
+           <div class="d-flex align-items-center justify-content-between">
+                  
+                <div class="d-flex align-items-center">
 
-    <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                      <img src="${news.author.img}"
+                     alt="Generic placeholder image" class="img-fluid rounded-circle border border-dark border-3"
+                      style="width: 70px;">
+                    </div>
 
-        <div class="d-flex align-items-center">
+                    <div>
+                       <p class="card-text"><small class="text-muted">${news.author.name}</small></p>
+                   </div>
 
-            <div>
-                <img src="${news.author.img}"
-                    alt="Generic placeholder image" class="img-fluid rounded-circle border border-dark border-3"
-                    style="width: 70px;">
-            </div>
+                </div>
 
-            <div>
-                <p class="card-text"><small class="text-muted">${news.author.name}</small></p>
-                <p class="card-text"><small class="text-muted">${news.author.published_date}</small></p>
-            </div>
+              <div>
+                  <i class="fa-solid fa-eye">${news.total_view}</i>
+             </div>
 
-
-        </div>
-
-        <div>
-            <i class="fa-solid fa-eye">${news.total_view}</i>
-        </div>
-
-        <div>
-            <button type="button" class="btn btn-primary">Details News</button>
-        </div>
-
-
-    </div
-           
-            
-        </div >
+              <div>
+                   <button onclick="newsdetails('${news._id}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Details News</button>
+               </div>
+            </div>     
+        </div        
     </div >
-    `
+    </div >`
+
         newsContainer.appendChild(newsDiv);
     })
 
 }
 
-//sloadnewsdetails();
+
+
+
+const newsdetails = async (newsid) => {
+    const url = `https://openapi.programming-hero.com/api/news/${newsid}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    displaynewsdetails(data);
+}
+
+const displaynewsdetails = modalnews => {
+    const newsModal = modalnews.data[0]
+    const modalDetails = document.getElementById('newsDetailsModal')
+    modalDetails.innerHTML = ` 
+    <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">${newsModal.title}</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+Author Name: ${newsModal.author.name} & 
+Total News View:${newsModal.total_view}
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+</div>
+    `
+
+}
+
+//loadnewsdetails();
 
 
 loadCategories();
