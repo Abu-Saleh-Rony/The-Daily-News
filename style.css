@@ -1,4 +1,12 @@
+.bg-color {
+    background-color: rgb(240, 242, 245);
+}
+
 ul li a {
     text-decoration: none;
 
+}
+
+* {
+    list-style: none;
 }

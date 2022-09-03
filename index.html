@@ -13,14 +13,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="bg-color">
 
     <!--Navbar Section-->
     <section class="container">
-        <div class="row pb-5">
+        <div class="row">
             <nav class="navbar navbar-expand-lg navbar-light border-bottom navbar-underline-color">
                 <div class="container-fluid container">
-                    <a class="navbar-brand bg-primary text-white p-2 border rounded" href="#">The Daily News</a>
+                    <a class="navbar-brand fs-2 fw-bold" href="#">The Daily <span
+                            class="bg-primary text-white p-2 border rounded">News</span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -40,13 +41,69 @@
             </nav>
         </div>
     </section>
-    <!--Main Section-->
-    <section class="container">
+    <!--Category Section-->
+    <section class="container ">
         <ul id="category-div" class="d-lg-flex d-md-flex flex-sm-column flex-lg-row flex-md-row align-items-center
             justify-content-center">
             <li class="list-group-item mx-3"><a href="#">Home</a></li>
         </ul>
     </section>
+
+    <!--News Found Portion-->
+    <section class="container mt-4">
+        <div id="category-news-found" class="list-group bg-white fs-5 fw-semibold p-2">
+            <p>Category News Found </p>
+        </div>
+
+    </section>
+
+    <!----Sort By View Portion-->
+
+    <section class="container mt-3">
+        <div class="row">
+            <div class="col-6">
+                <ul class=" d-flex mb-2 mb-lg-0">
+                    <li class="fs-5">Sort By Views: </li>
+                    <li class="dropdown bg-white">
+                        <a class="dropdown-toggle fs-5" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Default
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Most Views News</a></li>
+                            <li><a class="dropdown-item" href="#">Most Recent News</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-primary" type="submit">Today's Pick</button>
+                <button type="button" class="btn btn-outline-primary">Trending</button>
+
+            </div>
+        </div>
+    </section>
+
+    <!---News Portal Section-->
+    <section class="container mt-3">
+        <div id="news-portal" class="card mb-3" style="max-width: 100%;">
+            <!-- <div class="row">
+                <div class="col-md-4">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+
 
 
 
