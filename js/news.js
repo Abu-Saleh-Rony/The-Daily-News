@@ -5,7 +5,9 @@ const loadCategories = async () => {
     displayCategory(data.data.news_category);
 }
 
+
 const displayCategory = categories => {
+
     const categoryContainer = document.getElementById('category-div');
     categories.forEach(category => {
         const categoryDiv = document.createElement('ul');
@@ -16,9 +18,11 @@ const displayCategory = categories => {
         categoryContainer.appendChild(categoryDiv);
 
     });
+
 }
 
 const loadnewsdetails = async (category_id) => {
+    document.getElementById('spinners-loader').classList.remove('d-none')
     const url = `https://openapi.programming-hero.com/api/news/category/0${category_id}`;
     const res = await fetch(url);
     const data = await res.json();
@@ -40,7 +44,8 @@ const displaynews = portalnews => {
     portalnews.forEach(news => {
 
         const newsDiv = document.createElement('div');
-        newsDiv.setAttribute('class', 'row')
+        // newsDiv.setAttribute('class', 'row')
+        newsDiv.classList.add('my-3', 'row', 'border', 'bg-white')
         newsDiv.innerHTML = ` 
         <div class="col-md-4">
         <img src="${news.image_url}" class="img-fluid rounded-start" alt="...">
@@ -80,6 +85,7 @@ const displaynews = portalnews => {
 
         newsContainer.appendChild(newsDiv);
     })
+    document.getElementById('spinners-loader').classList.add('d-none')
 
 }
 
@@ -102,8 +108,10 @@ const displaynewsdetails = modalnews => {
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body">
-Author Name: ${newsModal.author.name} & 
-Total News View:${newsModal.total_view}
+
+Author Name: ${newsModal.author.name ? newsModal.author.name : 'No Author Found'} 
+</br> 
+Total News View:${newsModal.total_view ? newsModal.total_view : 'No News Found'}
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

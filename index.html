@@ -78,24 +78,28 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-3">
-                <button class="btn btn-primary" type="submit">Today's Pick</button>
-                <button type="button" class="btn btn-outline-primary">Trending</button>
-
+            <div class="col-3 d-flex justify-content-end">
+                <div>
+                    <button class="btn btn-primary" type="submit">Today's Pick</button>
+                    <button type="button" class="btn btn-outline-primary">Trending</button>
+                </div>
             </div>
+
         </div>
     </section>
-
+    <!--Spinner Portion-->
     <section id="spinners-loader" class="d-none">
-        <div style="height: 200px;" class="d-flex justify-content-center align-items-center">
-            <div class="spinner-border text-primary" role="status">
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
         </div>
     </section>
+
+
     <!---News Portal Section-->
     <section class="container mt-3">
-        <div id="news-portal" class="card mb-3" style="max-width: 100%;">
+        <div id="news-portal" class="mb-3" style="max-width: 100%;">
         </div>
     </section>
 
